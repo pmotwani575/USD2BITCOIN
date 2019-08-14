@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  airflow:
+    build:
+      context: .
+    ports:
+      - "2000:8080"
+    command: >
+      sh -c "python dags.py runserver 0.0.0.0:8080"
+  mysql:
+    build:
+      context: .
+    ports:
+      - "1000:3306"
+    depends_on:
+      - airflow
