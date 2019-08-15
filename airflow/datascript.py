@@ -2,9 +2,20 @@
 
 import json
 import requests
+import pymysql.cursors
 response = requests.get("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=BTC&apikey=TLPB5KRYPO2BX23A")
 todos = json.loads(response.text)
 v1=todos['Realtime Currency Exchange Rate']
+
+
+# Connect to the database.
+connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='password',
+                             db='bitcoin',
+                         )
+
+print ("connect successful!!")
 
 
 insert into bitcoin(From_Currency Code,From_Currency Name,To_Currency Code,To_Currency Name,

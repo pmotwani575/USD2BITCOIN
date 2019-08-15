@@ -25,20 +25,20 @@ Once the mysql server is deployed , we will login to mysql server by below
 mysql -u root -p
 enter password : password to launch the sql server
 
-Once server is launched we will create a bitcoin.py script to make a SQL connection and insert/feed the data  via Python to our Bitcoin tables
+Once server is launched we will create a datascript.py script to make a SQL connection and insert/feed the data  via Python to our Bitcoin tables
 
 PS : Please note we are running this script from our airflow server every 10 minutes
 
 
 #############################################
 
-3) For orchestration/monitoring tasks or alerting the tasks and creating alerts for our failed tasks we can use tools such as Amazon ECS with Fargate or EC2 or Kubernetes , or we can alleasst use Docker-compose for running two dockers together and same file is mentioned in folder but it wad not working for me
+3) For orchestration/monitoring tasks or alerting the tasks and creating alerts for our failed tasks we can use tools such as Amazon ECS with Fargate or EC2 or EKS , Kubernetes , or we can alleast use Docker-compose for running two dockers together and same file is mentioned in folder but it was not working for me so I opted to test this over local host separately by using or building dockers using Bridge Mode
 
 PS : I am communication both the containers via Bridge netwrorking over localhost  
 
 ########################################
 
-4) Please find the plotting.py python script which will create the scattered plot and shows the Relationship between timeline and echange rate
+4) Please find the plotting.py python script which will create the scattered plot and shows the Relationship between timeline and exchange rate
 
 X AXIS : TimeLine
 Y AXIS : Exchange rate
